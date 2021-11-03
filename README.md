@@ -1,4 +1,0 @@
-# Serviço Email
-
-Mantenedores:
-* Tales
