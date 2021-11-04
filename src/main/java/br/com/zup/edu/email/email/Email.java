@@ -14,16 +14,20 @@ public class Email {
     private Long id;
     private String assunto;
     private String mensagem;
-    private String remetente;
+    private String destinatario;
     private LocalDateTime criandoEm = LocalDateTime.now();
 
     @Deprecated
     public Email() {
     }
 
-    public Email(String assunto, String mensagem, String remetente) {
+    public Email(String assunto, String mensagem, String destinatario) {
         this.assunto = assunto;
         this.mensagem = mensagem;
-        this.remetente = remetente;
+        this.destinatario = destinatario;
+    }
+
+    public String getDestinatario() {
+        return destinatario;
     }
 }

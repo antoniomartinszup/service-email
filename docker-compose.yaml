@@ -6,7 +6,7 @@ services:
     volumes:
       - postgres-email-volume:/var/lib/postgresql/email
     ports:
-      - "5433:5433"
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: email123

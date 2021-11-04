@@ -10,7 +10,7 @@ spring:
         spring.json.trusted.packages: "*"
         spring.json.use.type.headers: "false"
     topic:
-      transactions: ${KAFKA_TOPIC:emailtpc}
+      pagamento: ${KAFKA_TOPIC:pagamento}
 
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -19,30 +19,13 @@ spring:
     password: ${DATABASE_PASSWORD:email123}
   jpa:
     hibernate:
-      #ddl-auto: update
-      #ddl-auto: create-drop
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-      #dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     database: postgresql
     properties:
       hibernate:
         format_sql: true
 
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    username: postgres
-#    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/email}
-#    testWhileIdle: 'true'
-#    validationQuery: SELECT 1
-#    password: email123
-#  jpa:
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
-#    hibernate:
-#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-#      ddl-auto: update
-#    show-sql: 'true'
 server:
   port : 8081
