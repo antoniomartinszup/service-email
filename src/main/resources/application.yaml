@@ -11,19 +11,38 @@ spring:
         spring.json.use.type.headers: "false"
     topic:
       transactions: ${KAFKA_TOPIC:emailtpc}
+
   datasource:
-    username: root
-    url: ${BANCO_DADOS:jdbc:mysql://localhost:3306/transacoes}
-    testWhileIdle: 'true'
-    validationQuery: SELECT 1
-    password: root
+    driver-class-name: org.postgresql.Driver
+    url: ${URL_DATABASE:jdbc:postgresql://localhost:5433/email}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:email123}
   jpa:
+    hibernate:
+      #ddl-auto: update
+      #ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      #dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    database: postgresql
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    hibernate:
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-      ddl-auto: update
-    show-sql: 'true'
+        format_sql: true
+
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/email}
+#    testWhileIdle: 'true'
+#    validationQuery: SELECT 1
+#    password: email123
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#      ddl-auto: update
+#    show-sql: 'true'
 server:
   port : 8081
