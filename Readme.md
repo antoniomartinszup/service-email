@@ -3,6 +3,8 @@
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=spring&message=framework&color=green&style=for-the-badge&logo=SPRING"/>
   <img src="http://img.shields.io/static/v1?label=Spring&message=2.5.5&color=red&style=for-the-badge&logo=spring"/>
+  <img src="https://img.shields.io/static/v1?label=&message=Kafka&color=gray&style=for-the-badge&logo=Kafka"/>
+  <img src="https://img.shields.io/static/v1?label=&message=Docker&color=gray&style=for-the-badge&logo=Docker"/>
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E1&color=GREEN&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
@@ -18,26 +20,24 @@
 
 [Como rodar a aplicação](#como-rodar-a-aplicação)
 
-[Resultado Esperado](#resultado-esperado)
-
-[Metricas](#metricas)
 
 ## Descrição do projeto
 
 <p align="justify">
-  A aplicação aqui em desenvolvimento tem o objetivo de enviar email. 
+  A aplicação aqui em desenvolvimento tem o objetivo de enviar email construido após consumir as mensagem enviadas para 
+  o tópico correspondente que demais aplicações produzem. 
 </p>
 
 ## Funcionalidades
 
-* 
-
-* 
+* A sua função é ficar escutando um tópico no Kafka para saber quais as transações que aconteceram e enviar um email para as pessoas que são donas das contas.
 
 
 ## Pré-requisitos
 
 * [Docker](https://docs.docker.com/get-docker/)
+* [JAVA](https://www.java.com/pt-BR/)
+* [MAVEN](https://maven.apache.org/)
 
 
 ## Como rodar a aplicação:
@@ -53,29 +53,3 @@ docker-compose up -d
 ```
 
 * Iniciar a aplicação 
-
-* Executar as requisições para os endpoints do tipo **?**:
-```
-http://localhost:8080/
-
-http://localhost:8080/
-```
-
-## Resultado Esperado
-
-- Em caso de sucesso:
-    - Retorno será um status de sucesso (200)
-
-- Em caso de falha:
-    - Retorno será um status de erro (?)
-
-## Metricas
-
-* Endpoints 
-```
-http://localhost:8080/actuator
-
-http://localhost:8080/actuator/health
-
-http://localhost:8080/actuator/metrics
-```
