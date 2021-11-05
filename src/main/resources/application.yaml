@@ -26,6 +26,19 @@ spring:
     properties:
       hibernate:
         format_sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,prometheus
+info:
+  app:
+    version: '@project.version@'
+    name: '@project.name@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+    description: '@project.description@'
 
 server:
   port : 8081
