@@ -18,7 +18,7 @@ public class PagamentoConsumer {
     @Autowired
     private EmailRepository emailRepository;
 
-    @KafkaListener(topics = "${spring.kafka.topic.pagamento}",
+    @KafkaListener(topics = "email",
             groupId = "${spring.kafka.consumer.group-id}",
             properties = {"spring.json.value.default.type=br.com.zup.edu.email.records.PagamentoRecord"})
     public void consumir(ConsumerRecord<String, PagamentoRecord> record) {

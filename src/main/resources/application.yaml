@@ -9,12 +9,10 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.use.type.headers: "false"
-    topic:
-      pagamento: ${KAFKA_TOPIC:pagamento}
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${URL_DATABASE:jdbc:postgresql://localhost:5433/email}
+    url: ${URL_DATABASE:jdbc:postgresql://localhost:5438/email}
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:email123}
   jpa:
@@ -41,4 +39,4 @@ info:
     description: '@project.description@'
 
 server:
-  port : 8081
+  port : 8088
